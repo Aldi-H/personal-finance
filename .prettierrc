@@ -1,0 +1,22 @@
+{
+  "importOrder": [
+    "^@core/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^@/lib/utility/(.*)$",
+    "^@/lib/types/(.*)$",
+    "^public/assets/(.*)$",
+    "^[./]"
+  ],
+  "tailwindStylesheet": "./src/styles/globals.css",
+  "tailwindAttributes": ["className"],
+  "tailwindFunctions": ["clsx", "cva"],
+  "tailwindPreserveDuplicates": true,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "tailwindPreserveWhitespace": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ]
+}
