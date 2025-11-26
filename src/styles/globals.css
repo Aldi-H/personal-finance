@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /** Typography */
+  --font-public-sans: var(--font-public-sans);
+
   /** Spacing */
   --spacing-500: var(--space-500); /* 2.5rem */
   --spacing-400: var(--space-400); /* 2rem */
@@ -29,43 +32,40 @@
   --tracking-text-tracking: var(--text-tracking); /* 0px */
 
   /** Font Weight */
-  --font-weight-bold: var(--font-weight-bold);
-  --font-weight-regular: var(--font-weight-regular);
+  --font-weight-text-bold: var(--font-weight-bold);
+  --font-weight-text-regular: var(--font-weight-regular);
 
   /** Beige */
-  --color-rosy-granite: var(--rosy-granite);
-  --color-parchment: var(--parchment);
+  --color-rosy-granite: var(--rosy-granite); /* Beige 500 */
+  --color-parchment: var(--parchment); /* Beige 100 */
 
   /** Grey */
-  --color-shadow-grey: var(--shadow-grey);
-  --color-dim-grey: var(--dim-grey);
-  --color-silver: var(--silver);
-  --color-white-smoke: var(--white-smoke);
+  --color-shadow-grey: var(--shadow-grey); /* Grey 900 */
+  --color-dim-grey: var(--dim-grey); /* Grey 500 */
+  --color-silver: var(--silver); /* Grey 300 */
+  --color-white-smoke: var(--white-smoke); /* Grey 100 */
 
   /** Secondary Colors */
-  --color-pine-blue: var(--pine-blue);
-  --color-desert-sand: var(--desert-sand);
-  --color-sky-blue-light: var(--sky-blue-light);
-  --color-navy-grey: var(--navy-grey);
-  --color-rosy-copper: var(--rosy-copper);
-  --color-lavender-purpel: var(--lavender-purpel);
+  --color-pine-blue: var(--pine-blue); /* Green */
+  --color-desert-sand: var(--desert-sand); /* Yellow */
+  --color-sky-blue-light: var(--sky-blue-light); /* Cyan */
+  --color-navy-grey: var(--navy-grey); /* Navy */
+  --color-rosy-copper: var(--rosy-copper); /* Red */
+  --color-lavender-purpel: var(--lavender-purpel); /* Purple */
 
   /** Other Colors */
-  --color-amethyst-smoke: var(--amethyst-smoke);
-  --color-deep-teal: var(--deep-teal);
-  --color-toffee-brown: var(--toffee-brown);
-  --color-berry-blush: var(--berry-blush);
-  --color-steel-blue: var(--steel-blue);
-  --color-cool-steel: var(--cool-steel);
-  --color-palm-leaf: var(--palm-leaf);
-  --color-old-gold: var(--old-gold);
-  --color-cinnamon-wood: var(--cinnamon-wood);
+  --color-amethyst-smoke: var(--amethyst-smoke); /* Purple */
+  --color-deep-teal: var(--deep-teal); /* Turqoise */
+  --color-toffee-brown: var(--toffee-brown); /* Brown */
+  --color-berry-blush: var(--berry-blush); /* Magenta */
+  --color-steel-blue: var(--steel-blue); /* Blue */
+  --color-cool-steel: var(--cool-steel); /* Navy Grey */
+  --color-palm-leaf: var(--palm-leaf); /* Army Green */
+  --color-old-gold: var(--old-gold); /* Brown */
+  --color-cinnamon-wood: var(--cinnamon-wood); /* Orange */
 
   /** White */
-  --color-white: var(--white);
-
-  /** Typography */
-  --font-public-sans: var(--font-public-sans);
+  --color-white: var(--white); /* White */
 
   /** Shadcn Default */
   --color-background: var(--background);
@@ -108,6 +108,9 @@
 }
 
 :root {
+  /** Typography */
+  --font-public-sans: "Public Sans", sans-serif;
+
   /** Spacing */
   --space-500: 40px; /* 2.5rem */
   --space-400: 32px; /* 2rem */
@@ -132,37 +135,41 @@
   /** Letter Spacing */
   --text-tracking: 0px;
 
+  /** Font Weight */
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
   /** Beige */
-  --rosy-granite: oklch(0.6588 0.012 54.4);
-  --parchment: oklch(0.9691 0.0068 67.74);
+  --rosy-granite: oklch(0.6588 0.012 54.4); /* Beige 500 */
+  --parchment: oklch(0.9691 0.0068 67.74); /* Beige 100 */
 
   /** Grey */
-  --shadow-grey: oklch(0.2425 0.0095 294.85);
-  --dim-grey: oklch(0.5182 0.0013 17.2);
-  --silver: oklch(0.7668 0 0);
-  --white-smoke: oklch(0.9612 0 0);
+  --shadow-grey: oklch(0.2425 0.0095 294.85); /* Grey 900 */
+  --dim-grey: oklch(0.5182 0.0013 17.2); /* Grey 500 */
+  --silver: oklch(0.7668 0 0); /* Grey 300 */
+  --white-smoke: oklch(0.9612 0 0); /* Grey 100 */
 
   /** Secondary Colors */
-  --pine-blue: oklch(0.5356 0.0794 190.54);
-  --desert-sand: oklch(0.8717 0.0606 63.63);
-  --sky-blue-light: oklch(0.794 0.0737 211.41);
-  --navy-grey: oklch(0.4966 0.0253 291.18);
-  --rosy-copper: oklch(0.5754 0.1685 30.38);
-  --lavender-purpel: oklch(0.5802 0.1044 297.97);
+  --pine-blue: oklch(0.5356 0.0794 190.54); /* Green */
+  --desert-sand: oklch(0.8717 0.0606 63.63); /* Yellow */
+  --sky-blue-light: oklch(0.794 0.0737 211.41); /* Cyan */
+  --navy-grey: oklch(0.4966 0.0253 291.18); /* Navy */
+  --rosy-copper: oklch(0.5754 0.1685 30.38); /* Red */
+  --lavender-purpel: oklch(0.5802 0.1044 297.97); /* Purple */
 
   /** Other Colors */
-  --amethyst-smoke: oklch(0.668 0.0969 319.73);
-  --deep-teal: oklch(0.5599 0.0396 196.08);
-  --toffee-brown: oklch(0.5536 0.0671 49.5);
-  --berry-blush: oklch(0.5187 0.099 351.49);
-  --steel-blue: oklch(0.5841 0.1005 242.37);
-  --cool-steel: oklch(0.7024 0.0203 255.57);
-  --palm-leaf: oklch(0.6298 0.0714 125.1);
-  --old-gold: oklch(0.7693 0.1058 94.07);
-  --cinnamon-wood: oklch(0.6161 0.1156 43.33);
+  --amethyst-smoke: oklch(0.668 0.0969 319.73); /* Purple */
+  --deep-teal: oklch(0.5599 0.0396 196.08); /* Turqoise */
+  --toffee-brown: oklch(0.5536 0.0671 49.5); /* Brown */
+  --berry-blush: oklch(0.5187 0.099 351.49); /* Magenta */
+  --steel-blue: oklch(0.5841 0.1005 242.37); /* Blue */
+  --cool-steel: oklch(0.7024 0.0203 255.57); /* Navy Grey */
+  --palm-leaf: oklch(0.6298 0.0714 125.1); /* Army Green */
+  --old-gold: oklch(0.7693 0.1058 94.07); /* Brown */
+  --cinnamon-wood: oklch(0.6161 0.1156 43.33); /* Orange */
 
   /** White */
-  --white: oklch(1 0 0);
+  --white: oklch(1 0 0); /* White */
 
   /** Shadcn Default */
   --radius: 0.625rem;
@@ -239,6 +246,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-public-sans);
   }
 }
 
@@ -248,7 +256,7 @@
     font-size: var(--text-size-1);
     line-height: var(--leading-text-leading-1);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-text-bold);
   }
 
   .text-preset-2 {
@@ -256,7 +264,7 @@
     font-size: var(--text-xl);
     line-height: var(--leading-text-leading-1);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-text-bold);
   }
 
   .text-preset-3 {
@@ -264,7 +272,7 @@
     font-size: var(--text-base);
     line-height: var(--leading-text-leading-2);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-text-bold);
   }
 
   .text-preset-4 {
@@ -272,7 +280,7 @@
     font-size: var(--text-sm);
     line-height: var(--leading-text-leading-2);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-text-regular);
   }
 
   .text-preset-4-bold {
@@ -280,7 +288,7 @@
     font-size: var(--text-sm);
     line-height: var(--leading-text-leading-2);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-text-bold);
   }
 
   .text-preset-5 {
@@ -288,7 +296,7 @@
     font-size: var(--text-xs);
     line-height: var(--leading-text-leading-2);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-text-regular);
   }
 
   .text-preset-5-bold {
@@ -296,6 +304,6 @@
     font-size: var(--text-xs);
     line-height: var(--leading-text-leading-2);
     letter-spacing: var(--tracking-normal);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-text-bold);
   }
 }
