@@ -1,8 +1,10 @@
 "use client";
 
 import {
+  CaretDownIcon,
   CaretRightIcon,
   CubeIcon,
+  CurrencyDollarSimpleIcon,
   HeartIcon,
   HorseIcon,
 } from "@phosphor-icons/react";
@@ -19,6 +21,10 @@ export default function Home() {
         <Button variant="destroy">Placeholder</Button>
         <Button variant="tertiary">
           Placeholder <CaretRightIcon size={16} weight="fill" />
+        </Button>
+        <Button variant="outline" size="md">
+          <CurrencyDollarSimpleIcon size={16} /> Placeholder{" "}
+          <CaretDownIcon size={16} weight="fill" />
         </Button>
 
         <HorseIcon />

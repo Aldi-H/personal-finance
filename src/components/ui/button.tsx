@@ -11,6 +11,8 @@ const buttonVariants = cva(
         primary: "bg-shadow-grey text-white shadow-xs hover:bg-dim-grey",
         secondary:
           "bg-parchment shadow-xs outline-parchment hover:bg-white hover:outline-1",
+        outline:
+          "border border-rosy-granite bg-background text-sm font-normal text-rosy-granite shadow-xs hover:border-dim-grey hover:text-shadow-grey active:border-dim-grey active:text-shadow-grey dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         destroy: "bg-rosy-copper text-white shadow-xs hover:bg-rosy-copper/80",
         tertiary:
           "bg-transparent text-dim-grey shadow-none hover:text-shadow-grey",
@@ -18,6 +20,7 @@ const buttonVariants = cva(
       size: {
         default: "h-[53px] p-4 has-[>svg]:px-3",
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
+        md: "h-[45px] p-3 has-[>svg]:px-3",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
