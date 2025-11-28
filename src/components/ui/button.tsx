@@ -14,6 +14,8 @@ const buttonVariants = cva(
         outline:
           "border border-rosy-granite bg-background text-sm font-normal text-rosy-granite shadow-xs hover:border-dim-grey hover:text-shadow-grey active:border-dim-grey active:text-shadow-grey dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         destroy: "bg-rosy-copper text-white shadow-xs hover:bg-rosy-copper/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         tertiary:
           "bg-transparent text-dim-grey shadow-none hover:text-shadow-grey",
       },
