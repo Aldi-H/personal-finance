@@ -7,15 +7,49 @@ import {
   CurrencyDollarSimpleIcon,
   HeartIcon,
   HorseIcon,
+  MagnifyingGlassIcon,
 } from "@phosphor-icons/react";
 import Image from "next/image";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
+import PfCombobox from "@/components/pf-components/pf-combobox/pf-combobox";
+import PfDropdown from "@/components/pf-components/pf-dropdown/pf-dropdown";
+
+const items = [
+  {
+    label: "Settings",
+    value: "settings",
+  },
+  {
+    label: "Logout",
+    value: "logout",
+  },
+];
+
 export default function Home() {
+  const [value, setValue] = useState("");
+
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+        <div className="w-80">
+          <PfCombobox
+            comboboxItems={items}
+            value={value}
+            onValueChange={setValue}
+            placeholder="Lorem ipsum dolor sit."
+          />
+        </div>
+
+        <PfDropdown
+          triggerLabel="Lorem ipsum dolor sit."
+          triggerIconStart={<MagnifyingGlassIcon size={16} />}
+          triggerIconEnd={<CaretDownIcon size={16} weight="fill" />}
+          items={items}
+        />
+
         <Button>Placeholder</Button>
         <Button variant="secondary">Placeholder</Button>
         <Button variant="destroy">Placeholder</Button>
