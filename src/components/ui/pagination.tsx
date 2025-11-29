@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  MoreHorizontalIcon,
-} from "lucide-react";
+  CaretLeftIcon,
+  CaretRightIcon,
+  DotsThreeIcon,
+} from "@phosphor-icons/react";
 import * as React from "react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -55,7 +55,7 @@ function PaginationLink({
       data-active={isActive}
       className={cn(
         buttonVariants({
-          variant: isActive ? "outline" : "ghost",
+          variant: isActive ? "primary" : "outline",
           size,
         }),
         className,
@@ -72,12 +72,12 @@ function PaginationPrevious({
   return (
     <PaginationLink
       aria-label="Go to previous page"
-      size="default"
-      className={cn("gap-1 px-2.5 sm:pl-2.5", className)}
+      size="lg"
+      className={cn("h-9 gap-1 px-2.5 sm:pl-2.5", className)}
       {...props}
     >
-      <ChevronLeftIcon />
-      <span className="hidden sm:block">Previous</span>
+      <CaretLeftIcon size={16} weight="fill" />
+      <span className="hidden sm:block">Prev</span>
     </PaginationLink>
   );
 }
@@ -89,12 +89,12 @@ function PaginationNext({
   return (
     <PaginationLink
       aria-label="Go to next page"
-      size="default"
-      className={cn("gap-1 px-2.5 sm:pr-2.5", className)}
+      size="lg"
+      className={cn("h-9 gap-1 px-2.5 sm:pr-2.5", className)}
       {...props}
     >
       <span className="hidden sm:block">Next</span>
-      <ChevronRightIcon />
+      <CaretRightIcon size={16} weight="fill" />
     </PaginationLink>
   );
 }
@@ -110,7 +110,7 @@ function PaginationEllipsis({
       className={cn("flex size-9 items-center justify-center", className)}
       {...props}
     >
-      <MoreHorizontalIcon className="size-4" />
+      <DotsThreeIcon size={16} weight="fill" />
       <span className="sr-only">More pages</span>
     </span>
   );
