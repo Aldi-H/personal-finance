@@ -1,21 +1,118 @@
 "use client";
 
 import {
+  ArrowsDownUpIcon,
   CaretDownIcon,
   CaretRightIcon,
+  ChartDonutIcon,
   CubeIcon,
   CurrencyDollarSimpleIcon,
   HeartIcon,
   HorseIcon,
+  HouseIcon,
+  MagnifyingGlassIcon,
+  ReceiptIcon,
+  TipJarIcon,
 } from "@phosphor-icons/react";
 import Image from "next/image";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
+
+import PfCombobox from "@/components/pf-components/pf-combobox/pf-combobox";
+import PfDropdown from "@/components/pf-components/pf-dropdown/pf-dropdown";
+import PfInput from "@/components/pf-components/pf-input/pf-input";
+import PfBottomNav from "@/components/pf-components/pf-navigation-menu/pf-navigation-menu";
+import PfPagination from "@/components/pf-components/pf-pagination/pf-pagination";
+
+const items = [
+  {
+    label: "Settings",
+    value: "settings",
+  },
+  {
+    label: "Logout",
+    value: "logout",
+  },
+];
+
+const navItems = [
+  {
+    label: "Overview",
+    href: "/overview",
+    icon: <HouseIcon size={24} weight="fill" />,
+  },
+  {
+    label: "Transactions",
+    href: "/transactions",
+    icon: <ArrowsDownUpIcon size={24} weight="fill" />,
+  },
+  {
+    label: "Budgets",
+    href: "/budgets",
+    icon: <ChartDonutIcon size={24} weight="fill" />,
+  },
+  {
+    label: "Pots",
+    href: "/pots",
+    icon: <TipJarIcon size={24} weight="fill" />,
+  },
+  {
+    label: "Recurring bills",
+    href: "/recurring-bills",
+    icon: <ReceiptIcon size={24} weight="fill" />,
+  },
+];
 
 export default function Home() {
+  const [value, setValue] = useState("");
+  const [page, setPage] = useState(1);
+
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
+    <div className="flex min-h-screen flex-col items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+        <div>
+          <PfBottomNav navItems={navItems} activePath="/budgets" />
+        </div>
+
+        <div className="w-full">
+          <PfPagination
+            page={page}
+            totalPages={5}
+            onPageChange={(p) => setPage(p)}
+          />
+        </div>
+
+        <PfInput
+          label="Placeholder Label"
+          htmlFor="input-1"
+          helperText="Helper text"
+        >
+          <>
+            <InputGroupInput placeholder="Search" />
+            <InputGroupAddon>
+              <MagnifyingGlassIcon size={16} />
+            </InputGroupAddon>
+          </>
+        </PfInput>
+
+        <div className="w-80">
+          <PfCombobox
+            comboboxItems={items}
+            value={value}
+            onValueChange={setValue}
+            placeholder="Lorem ipsum dolor sit."
+          />
+        </div>
+
+        <PfDropdown
+          triggerLabel="Lorem ipsum dolor sit."
+          triggerIconStart={<MagnifyingGlassIcon size={16} />}
+          triggerIconEnd={<CaretDownIcon size={16} weight="fill" />}
+          items={items}
+        />
+
         <Button>Placeholder</Button>
         <Button variant="secondary">Placeholder</Button>
         <Button variant="destroy">Placeholder</Button>

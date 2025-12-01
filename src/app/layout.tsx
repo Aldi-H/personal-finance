@@ -2,6 +2,10 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 
+import { SidebarProvider } from "@/components/ui/sidebar";
+
+import PfSidebar from "@/components/pf-components/pf-sidebar/pf-sidebar";
+
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
   weight: ["400", "700"],
@@ -20,7 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${publicSans.variable} antialiased`}>{children}</body>
+      <body className={`${publicSans.variable} bg-parchment antialiased`}>
+        <SidebarProvider>
+          <PfSidebar />
+          {children}
+        </SidebarProvider>
+      </body>
     </html>
   );
 }

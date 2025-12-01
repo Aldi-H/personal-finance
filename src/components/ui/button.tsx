@@ -4,7 +4,7 @@ import { type VariantProps, cva } from "class-variance-authority";
 import * as React from "react";
 
 const buttonVariants = cva(
-  "text-preset-4-bold inline-flex shrink-0 items-center justify-center gap-2 rounded-xl font-bold tracking-normal transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "text-preset-4-bold inline-flex shrink-0 items-center justify-center gap-2 rounded-lg font-bold tracking-normal transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
@@ -14,14 +14,16 @@ const buttonVariants = cva(
         outline:
           "border border-rosy-granite bg-background text-sm font-normal text-rosy-granite shadow-xs hover:border-dim-grey hover:text-shadow-grey active:border-dim-grey active:text-shadow-grey dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         destroy: "bg-rosy-copper text-white shadow-xs hover:bg-rosy-copper/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         tertiary:
           "bg-transparent text-dim-grey shadow-none hover:text-shadow-grey",
       },
       size: {
         default: "h-[53px] p-4 has-[>svg]:px-3",
-        sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
+        sm: "h-8 gap-1.5 px-3 has-[>svg]:px-2.5",
         md: "h-[45px] p-3 has-[>svg]:px-3",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        lg: "h-10 px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
     },
