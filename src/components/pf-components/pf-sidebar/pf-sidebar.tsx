@@ -53,9 +53,6 @@ const navData = {
 };
 
 const PfSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
-  // const { state } = useSidebar();
-  // const collapsed = state === "collapsed";
-
   return (
     <Sidebar collapsible="icon" {...props} className="">
       <SidebarHeader className="px-8 py-10">
