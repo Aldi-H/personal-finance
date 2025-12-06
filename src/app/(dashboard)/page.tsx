@@ -1,18 +1,14 @@
 "use client";
 
+import { mobileNav } from "@/config/navigation";
 import {
-  ArrowsDownUpIcon,
   CaretDownIcon,
   CaretRightIcon,
-  ChartDonutIcon,
   CubeIcon,
   CurrencyDollarSimpleIcon,
   HeartIcon,
   HorseIcon,
-  HouseIcon,
   MagnifyingGlassIcon,
-  ReceiptIcon,
-  TipJarIcon,
 } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -37,34 +33,6 @@ const items = [
   },
 ];
 
-const navItems = [
-  {
-    label: "Overview",
-    href: "/overview",
-    icon: <HouseIcon size={24} weight="fill" />,
-  },
-  {
-    label: "Transactions",
-    href: "/transactions",
-    icon: <ArrowsDownUpIcon size={24} weight="fill" />,
-  },
-  {
-    label: "Budgets",
-    href: "/budgets",
-    icon: <ChartDonutIcon size={24} weight="fill" />,
-  },
-  {
-    label: "Pots",
-    href: "/pots",
-    icon: <TipJarIcon size={24} weight="fill" />,
-  },
-  {
-    label: "Recurring bills",
-    href: "/recurring-bills",
-    icon: <ReceiptIcon size={24} weight="fill" />,
-  },
-];
-
 export default function Home() {
   const [value, setValue] = useState("");
   const [page, setPage] = useState(1);
@@ -73,7 +41,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <div>
-          <PfBottomNav navItems={navItems} activePath="/budgets" />
+          <PfBottomNav navItems={mobileNav} />
         </div>
 
         <div className="w-full">
