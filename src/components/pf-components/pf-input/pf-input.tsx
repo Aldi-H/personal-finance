@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
 import { InputGroup } from "@/components/ui/input-group";
@@ -8,11 +9,18 @@ interface PfInputProps {
   children: React.ReactNode;
   htmlFor?: string;
   helperText?: string;
+  className?: string;
 }
 
-const PfInput = ({ label, children, htmlFor, helperText }: PfInputProps) => {
+const PfInput = ({
+  label,
+  children,
+  htmlFor,
+  helperText,
+  className,
+}: PfInputProps) => {
   return (
-    <div className="flex flex-col space-y-1">
+    <div className={cn("flex flex-col space-y-1", className)}>
       <Label
         htmlFor={htmlFor}
         className="text-preset-5 font-bold text-dim-grey"
