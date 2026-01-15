@@ -1,3 +1,4 @@
+import PfBudgetsCard from "@/components/pf-components/pf-cards/pf-budgets-card/pf-budgets-card";
 import PfPotsCard from "@/components/pf-components/pf-cards/pf-pots-card/pf-pots-card";
 import PfSectionCard from "@/components/pf-components/pf-cards/pf-section-card/pf-section-card";
 import PfTransactionsCard from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-card";
@@ -86,7 +87,7 @@ const PageOverview = () => {
                   <div className="bg-navy-grey">Transaction1</div>
                 </div>
                 <div className="flex flex-col gap-6">
-                  <div className="bg-navy-grey">Budgets Charts</div>
+                  <PfBudgetsCard />
                   <div className="bg-navy-grey">Recurring Bills</div>
                 </div>
               </div>
