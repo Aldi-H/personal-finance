@@ -2,18 +2,9 @@ import { Label, Pie, PieChart } from "recharts";
 
 import {
   ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-
-interface BudgetItem {
-  id: string;
-  name: string;
-  value: number;
-  color: string;
-}
 
 interface ChartDataItem {
   category: string;
@@ -24,7 +15,6 @@ interface ChartDataItem {
 interface PfBudgetsChartPieProps {
   chartData: ChartDataItem[];
   chartConfig: Record<string, { label: string; color: string }>;
-  processedData: BudgetItem[];
   total: number;
   limit: number;
   innerRadius?: number;
@@ -32,7 +22,6 @@ interface PfBudgetsChartPieProps {
   secondaryInnerRadius?: number;
   secondaryOuterRadius?: number;
   maxHeight?: string;
-  showLegend?: boolean;
   showTooltip?: boolean;
   showCenterLabel?: boolean;
   centerLabelFormatter?: (
@@ -54,7 +43,6 @@ const defaultFormatter = (total: number, limit: number) => ({
 const PfBudgetsChartPie = ({
   chartData,
   chartConfig,
-  processedData,
   total,
   limit,
   innerRadius = 110,
@@ -62,7 +50,6 @@ const PfBudgetsChartPie = ({
   secondaryInnerRadius = 90,
   secondaryOuterRadius = 110,
   maxHeight = "400px",
-  showLegend = true,
   showTooltip = true,
   showCenterLabel = true,
   centerLabelFormatter,
@@ -74,14 +61,13 @@ const PfBudgetsChartPie = ({
     <div>
       <div>
         <ChartContainer
-          className={`max-h-[${maxHeight}] aspect-square items-center justify-center`}
+          className={`max-h-[${maxHeight}] aspect-square items-start`}
           config={chartConfig}
         >
           <PieChart>
             {showTooltip && (
               <ChartTooltip content={<ChartTooltipContent hideLabel />} />
             )}
-            {showLegend && <ChartLegend content={<ChartLegendContent />} />}
 
             {/* Outer Pie Chart */}
             <Pie
@@ -147,23 +133,6 @@ const PfBudgetsChartPie = ({
             </Pie>
           </PieChart>
         </ChartContainer>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        {processedData.map((item) => (
-          <div key={item.id} className="flex items-start gap-4">
-            <div
-              style={{ backgroundColor: item.color }}
-              className=" h-10 w-1 shrink-0 rounded-full"
-            />
-
-            <div className="flex flex-col gap-1">
-              <span className="text-preset-5 text-dim-grey">{item.name}</span>
-              <span className="text-preset-4-bold">
-                {item.value.toFixed(2)}
-              </span>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
