@@ -1,5 +1,6 @@
 import PfBudgetsCard from "@/components/pf-components/pf-cards/pf-budgets-card/pf-budgets-card";
 import PfPotsCard from "@/components/pf-components/pf-cards/pf-pots-card/pf-pots-card";
+import PfRecurringBillsCard from "@/components/pf-components/pf-cards/pf-recurring-bills-card/pf-recurring-bills-card";
 import PfSectionCard from "@/components/pf-components/pf-cards/pf-section-card/pf-section-card";
 import PfTransactionsCard from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-card";
 import { PfTransactionsColumns } from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-columns";
@@ -77,21 +78,23 @@ const PageOverview = () => {
               />
             </div>
             <div>
-              <div className="grid grid-cols-[3fr_2fr] gap-6">
+              <div className="grid min-h-[calc(100vh-200px)] grid-cols-[3fr_2fr] gap-6">
                 <div className="flex flex-col gap-6">
                   <PfPotsCard />
-                  <PfTransactionsCard
-                    columns={PfTransactionsColumns}
-                    data={data}
-                  />
-                  <div className="bg-navy-grey">Transaction1</div>
+                  <div className="flex-1">
+                    <PfTransactionsCard
+                      columns={PfTransactionsColumns}
+                      data={data}
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col gap-6">
                   <PfBudgetsCard />
-                  <div className="bg-navy-grey">Recurring Bills</div>
+                  <div className="flex-1">
+                    <PfRecurringBillsCard />
+                  </div>
                 </div>
               </div>
-              <div>{/* Placeholder for future content */}</div>
             </div>
           </div>
         </div>
