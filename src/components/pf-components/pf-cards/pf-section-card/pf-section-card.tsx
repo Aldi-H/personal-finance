@@ -19,10 +19,10 @@ const PfSectionCard = ({
   isActive,
 }: PfSectionCardProps) => {
   return (
-    <div className="my-8">
+    <div className="">
       <Card
         className={cn(
-          "@container/card p-6",
+          "@container/card @5xl:p-6",
           isActive && "bg-shadow-grey text-white",
         )}
       >

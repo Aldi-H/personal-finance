@@ -15,8 +15,8 @@ const PfBudgetsCard = () => {
         <PfCardAction pfActionText="See Details" icon={CaretRightIcon} />
       }
     >
-      <div className="flex flex-col xl:grid xl:grid-cols-3">
-        <div className="xl:col-span-2">
+      <div className="flex flex-col items-center gap-x-4 md:grid md:grid-cols-3">
+        <div className="md:col-span-2">
           <PfBudgetsChartPie
             total={budgets().total}
             limit={2000}
@@ -24,11 +24,11 @@ const PfBudgetsCard = () => {
             chartConfig={budgets().chartConfig}
           />
         </div>
-        <div className="mt-8 grid grid-cols-2 items-center gap-4 xl:mt-0 xl:grid-cols-1 xl:gap-y-0">
+        <div className="mt-8 grid auto-rows-min grid-cols-2 gap-4 md:mt-0 md:grid-cols-1 md:gap-y-6">
           {budgets().processedData.map((item) => (
             <div
               key={item.id}
-              className="flex items-start justify-center gap-4"
+              className="flex items-start gap-4 xl:justify-center"
             >
               <div
                 style={{ backgroundColor: item.color }}
