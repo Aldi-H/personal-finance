@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -14,7 +12,11 @@ interface PfCardProps {
 const PfCard = ({ pfCardTitle, pfCardAction, children }: PfCardProps) => {
   return (
     <div className="h-full">
-      <Card className={cn("@container/card rounded-xl border-none p-8")}>
+      <Card
+        className={cn(
+          "@container/card rounded-xl border-none px-3 py-6 lg:p-8",
+        )}
+      >
         <CardHeader className="flex items-center justify-between align-middle">
           <CardTitle className="text-preset-2">{pfCardTitle}</CardTitle>
           {pfCardAction}

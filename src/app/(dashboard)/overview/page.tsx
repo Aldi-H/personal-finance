@@ -78,7 +78,7 @@ const PageOverview = () => {
               />
             </div>
             <div>
-              <div className="5xl:grid-cols-[3fr_2fr] grid min-h-[calc(100vh-200px)] gap-6">
+              <div className="grid min-h-[calc(100vh-200px)] gap-6 2xl:grid-cols-[3fr_2fr]">
                 <div className="flex flex-col gap-6">
                   <PfPotsCard />
                   <div className="flex-1">

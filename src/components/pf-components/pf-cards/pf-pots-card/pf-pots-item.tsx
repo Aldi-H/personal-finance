@@ -19,7 +19,9 @@ const PfPotsItem = ({ color, itemTitle, itemAmount }: PfPotsItemProps) => {
       />
       <div className="flex flex-col gap-y-1">
         <div className="text-preset-4 text-dim-grey">{itemTitle}</div>
-        <div className="text-preset-3">{itemAmount}</div>
+        <div className="text-preset-3 text-wrap wrap-anywhere">
+          {itemAmount}
+        </div>
       </div>
     </div>
   );

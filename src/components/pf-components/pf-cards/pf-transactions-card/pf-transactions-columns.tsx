@@ -11,7 +11,7 @@ import {
 } from "./transactions-interface";
 
 const getIconComponent = (iconName?: string, initials?: string) => {
-  const iconClass = "h-6 w-6";
+  const iconClass = "h-5 w-5 md:h-6 md:w-6";
 
   if (iconName && iconMap[iconName]) {
     const IconComponent = iconMap[iconName];
@@ -19,7 +19,9 @@ const getIconComponent = (iconName?: string, initials?: string) => {
     return <IconComponent className={iconClass} />;
   }
 
-  return <span className="text-lg font-bold">{initials || "?"}</span>;
+  return (
+    <span className="text-sm font-bold md:text-lg">{initials || "?"}</span>
+  );
 };
 
 export const PfTransactionsColumns: ColumnDef<PfTransactionsColumnsInterface>[] =
@@ -38,12 +40,14 @@ export const PfTransactionsColumns: ColumnDef<PfTransactionsColumnsInterface>[] 
 
         return (
           <div className="flex flex-row items-center gap-4">
-            <Avatar className="size-12">
+            <Avatar className="size-9 md:size-12">
               <AvatarFallback>
                 {getIconComponent(iconName, initials)}
               </AvatarFallback>
             </Avatar>
-            <span className="text-preset-3">{name}</span>
+            <span className="text-preset-4-bold md:text-preset-3 text-wrap wrap-anywhere">
+              {name}
+            </span>
           </div>
         );
       },
@@ -59,14 +63,14 @@ export const PfTransactionsColumns: ColumnDef<PfTransactionsColumnsInterface>[] 
           <div className="text-right">
             <div
               className={cn(
-                "text-base font-bold",
+                "text-preset-4-bold font-bold text-wrap wrap-anywhere md:text-base",
                 isIncome ? "text-pine-blue" : "text-rosy-copper",
               )}
             >
               {isIncome ? "+" : "-"}
               {amount}
             </div>
-            <div className="text-sm font-semibold text-dim-grey">
+            <div className="text-preset-5 font-semibold text-dim-grey md:text-sm">
               {row.original.transactionDate}
             </div>
           </div>

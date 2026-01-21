@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Label, Pie, PieChart } from "recharts";
 
 import {
@@ -57,9 +60,50 @@ const PfBudgetsChartPie = ({
   const labelFormatter = centerLabelFormatter || defaultFormatter;
   const label = labelFormatter(total, limit);
 
+  const [radiusValues, setRadiusValues] = useState({
+    inner: innerRadius,
+    outer: outerRadius,
+    secondaryInner: secondaryInnerRadius,
+    secondaryOuter: secondaryOuterRadius,
+  });
+
+  useEffect(() => {
+    const updateRadiusValues = () => {
+      if (globalThis.matchMedia("(max-width: 760px)").matches) {
+        setRadiusValues({
+          inner: innerRadius * 0.6,
+          outer: outerRadius * 0.6,
+          secondaryInner: secondaryInnerRadius * 0.6,
+          secondaryOuter: secondaryOuterRadius * 0.6,
+        });
+      } else if (globalThis.matchMedia("(max-width: 1024px)").matches) {
+        setRadiusValues({
+          inner: innerRadius * 0.9,
+          outer: outerRadius * 0.9,
+          secondaryInner: secondaryInnerRadius * 0.9,
+          secondaryOuter: secondaryOuterRadius * 0.9,
+        });
+      } else {
+        setRadiusValues({
+          inner: innerRadius,
+          outer: outerRadius,
+          secondaryInner: secondaryInnerRadius,
+          secondaryOuter: secondaryOuterRadius,
+        });
+      }
+    };
+
+    updateRadiusValues();
+    globalThis.addEventListener("resize", updateRadiusValues);
+
+    return () => {
+      globalThis.removeEventListener("resize", updateRadiusValues);
+    };
+  }, [innerRadius, outerRadius, secondaryInnerRadius, secondaryOuterRadius]);
+
   return (
     <ChartContainer
-      className={`max-h-[${maxHeight}] lg:aspect-3/2.5 md:aspect-square xl:aspect-square`}
+      className={`max-h-[${maxHeight}] aspect-square md:aspect-square lg:aspect-[3/2.5] xl:aspect-square`}
       config={chartConfig}
     >
       <PieChart>
@@ -73,8 +117,8 @@ const PfBudgetsChartPie = ({
           data={chartData}
           dataKey="amount"
           nameKey="category"
-          innerRadius={innerRadius}
-          outerRadius={outerRadius}
+          innerRadius={radiusValues.inner}
+          outerRadius={radiusValues.outer}
           startAngle={90}
           endAngle={450}
           stroke="none"
@@ -86,8 +130,8 @@ const PfBudgetsChartPie = ({
           data={chartData}
           dataKey="amount"
           nameKey="category"
-          innerRadius={secondaryInnerRadius}
-          outerRadius={secondaryOuterRadius}
+          innerRadius={radiusValues.secondaryInner}
+          outerRadius={radiusValues.secondaryOuter}
           startAngle={90}
           endAngle={450}
           stroke="none"
@@ -108,15 +152,14 @@ const PfBudgetsChartPie = ({
                       className=""
                     >
                       <tspan
-                        className="text-preset-1"
+                        className="text-preset-2 md:text-4xl! md:font-bold"
                         x={viewBox.cx}
                         y={viewBox.cy}
                       >
-                        {/* ${budgets().total} */}
                         {label.main}
                       </tspan>
                       <tspan
-                        className="text-preset-5 fill-dim-grey"
+                        className="fill-dim-grey text-[9px] md:text-xs"
                         x={viewBox.cx}
                         y={(viewBox.cy || 0) + 24}
                       >

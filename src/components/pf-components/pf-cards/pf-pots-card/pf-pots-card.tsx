@@ -9,15 +9,12 @@ import PfPotsItem from "./pf-pots-item";
 const PfPotsCard = () => {
   return (
     <PfCard
-      pfCardTitle="Recent Transactions"
+      pfCardTitle="Pots"
       pfCardAction={
-        <PfCardAction
-          pfActionText="View All Transactions"
-          icon={CaretRightIcon}
-        />
+        <PfCardAction pfActionText="See Details" icon={CaretRightIcon} />
       }
     >
-      <div className="grid grid-cols-2 gap-x-5">
+      <div className="grid gap-x-5 lg:grid-cols-2">
         <div className="flex items-center gap-x-4 rounded-xl bg-parchment p-4">
           <TipJarIcon className="h-10 w-10 text-pine-blue" />
           <div className="flex flex-col gap-y-3">
@@ -27,7 +24,7 @@ const PfPotsCard = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="my-5 grid grid-cols-2 gap-4 lg:my-0">
           <PfPotsItem
             color="oklch(0.4966 0.0253 291.18)"
             itemTitle="Savings"
