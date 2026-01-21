@@ -22,11 +22,11 @@ const PfSectionCard = ({
     <div className="">
       <Card
         className={cn(
-          "@container/card @5xl:p-6",
+          "@container/card h-full @5xl:p-6",
           isActive && "bg-shadow-grey text-white",
         )}
       >
-        <CardHeader className="gap-y-3">
+        <CardHeader className="gap-y-3 text-wrap wrap-anywhere">
           <CardDescription className="text-preset-4">
             {sectionCardTitle}
           </CardDescription>

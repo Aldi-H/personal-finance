@@ -22,7 +22,9 @@ const PfPotsCard = () => {
           <TipJarIcon className="h-10 w-10 text-pine-blue" />
           <div className="flex flex-col gap-y-3">
             <div className="text-preset-4 text-dim-grey">Total Saved</div>
-            <div className="text-preset-1 text-shadow-grey">$1,250.00</div>
+            <div className="text-preset-1 text-wrap wrap-anywhere text-shadow-grey">
+              $1,250.00
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">

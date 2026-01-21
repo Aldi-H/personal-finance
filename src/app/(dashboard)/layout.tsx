@@ -12,7 +12,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <PfSidebar />
       <PfBottomNav navItems={mobileNav} />
       <SidebarInset>
-        <div className="m-10 md:pb-10 xl:pb-0">{children}</div>
+        <div className="m-10 md:pb-10 lg:pb-0">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

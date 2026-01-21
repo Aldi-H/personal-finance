@@ -58,83 +58,79 @@ const PfBudgetsChartPie = ({
   const label = labelFormatter(total, limit);
 
   return (
-    <div>
-      <div>
-        <ChartContainer
-          className={`max-h-[${maxHeight}] aspect-square items-start`}
-          config={chartConfig}
+    <ChartContainer
+      className={`max-h-[${maxHeight}] lg:aspect-3/2.5 md:aspect-square xl:aspect-square`}
+      config={chartConfig}
+    >
+      <PieChart>
+        {showTooltip && (
+          <ChartTooltip content={<ChartTooltipContent hideLabel />} />
+        )}
+
+        {/* Outer Pie Chart */}
+        <Pie
+          key="outer-pie"
+          data={chartData}
+          dataKey="amount"
+          nameKey="category"
+          innerRadius={innerRadius}
+          outerRadius={outerRadius}
+          startAngle={90}
+          endAngle={450}
+          stroke="none"
+        />
+
+        {/* Inner Pie Chart for center hole effect */}
+        <Pie
+          key="inner-pie"
+          data={chartData}
+          dataKey="amount"
+          nameKey="category"
+          innerRadius={secondaryInnerRadius}
+          outerRadius={secondaryOuterRadius}
+          startAngle={90}
+          endAngle={450}
+          stroke="none"
+          fillOpacity={0.7}
+          legendType="none"
         >
-          <PieChart>
-            {showTooltip && (
-              <ChartTooltip content={<ChartTooltipContent hideLabel />} />
-            )}
-
-            {/* Outer Pie Chart */}
-            <Pie
-              key="outer-pie"
-              data={chartData}
-              dataKey="amount"
-              nameKey="category"
-              innerRadius={innerRadius}
-              outerRadius={outerRadius}
-              startAngle={90}
-              endAngle={450}
-              stroke="none"
+          {showCenterLabel && (
+            <Label
+              // eslint-disable-next-line consistent-return
+              content={({ viewBox }) => {
+                if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                  return (
+                    <text
+                      x={viewBox.cx}
+                      y={viewBox.cy}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      className=""
+                    >
+                      <tspan
+                        className="text-preset-1"
+                        x={viewBox.cx}
+                        y={viewBox.cy}
+                      >
+                        {/* ${budgets().total} */}
+                        {label.main}
+                      </tspan>
+                      <tspan
+                        className="text-preset-5 fill-dim-grey"
+                        x={viewBox.cx}
+                        y={(viewBox.cy || 0) + 24}
+                      >
+                        {label.secondary}
+                      </tspan>
+                    </text>
+                  );
+                }
+              }}
             />
-
-            {/* Inner Pie Chart for center hole effect */}
-            <Pie
-              key="inner-pie"
-              data={chartData}
-              dataKey="amount"
-              nameKey="category"
-              innerRadius={secondaryInnerRadius}
-              outerRadius={secondaryOuterRadius}
-              startAngle={90}
-              endAngle={450}
-              stroke="none"
-              fillOpacity={0.7}
-              legendType="none"
-            >
-              {showCenterLabel && (
-                <Label
-                  // eslint-disable-next-line consistent-return
-                  content={({ viewBox }) => {
-                    if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                      return (
-                        <text
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                          className="flex flex-col gap-y-2"
-                        >
-                          <tspan
-                            className="text-preset-1"
-                            x={viewBox.cx}
-                            y={viewBox.cy}
-                          >
-                            {/* ${budgets().total} */}
-                            {label.main}
-                          </tspan>
-                          <tspan
-                            className="text-preset-5 fill-dim-grey"
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 24}
-                          >
-                            {label.secondary}
-                          </tspan>
-                        </text>
-                      );
-                    }
-                  }}
-                />
-              )}
-            </Pie>
-          </PieChart>
-        </ChartContainer>
-      </div>
-    </div>
+          )}
+        </Pie>
+      </PieChart>
+    </ChartContainer>
   );
 };
 
