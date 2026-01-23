@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { type IconProps } from "@phosphor-icons/react";
 import Link from "next/link";
@@ -25,9 +27,9 @@ const PfBottomNav = ({ navItems }: PfNavigationMenuProps) => {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-preset-5 px-5 py-2 font-bold text-silver hover:text-white",
+                "text-preset-5 flex flex-col items-center gap-1 px-5 py-2 font-bold text-silver hover:text-white",
                 item.isActive &&
-                  "rounded-t-lg border-b-4 border-b-pine-blue bg-white text-pine-blue",
+                  "rounded-t-lg border-b-4 border-b-pine-blue bg-white text-pine-blue hover:text-pine-blue",
               )}
             >
               {item.icon && (
@@ -35,7 +37,7 @@ const PfBottomNav = ({ navItems }: PfNavigationMenuProps) => {
                   weight="fill"
                   className={cn(
                     "flex h-6! w-6! items-center justify-center gap-y-1 text-inherit transition-colors",
-                    item.isActive && "text-pine-blue",
+                    item.isActive && "text-pine-blue hover:text-pine-blue",
                   )}
                 />
               )}
@@ -55,7 +57,7 @@ const PfBottomNav = ({ navItems }: PfNavigationMenuProps) => {
               className={cn(
                 "flex flex-col items-center px-5 pt-2 pb-3 text-silver hover:text-white",
                 item.isActive &&
-                  "rounded-t-lg border-b-4 border-b-pine-blue bg-white text-pine-blue",
+                  "rounded-t-lg border-b-4 border-b-pine-blue bg-white text-pine-blue hover:text-pine-blue",
               )}
             >
               {item.icon && (
@@ -63,7 +65,7 @@ const PfBottomNav = ({ navItems }: PfNavigationMenuProps) => {
                   weight="fill"
                   className={cn(
                     "flex h-6! w-6! items-center justify-center gap-y-1 text-inherit transition-colors",
-                    item.isActive && "text-pine-blue",
+                    item.isActive && "text-pine-blue hover:text-pine-blue",
                   )}
                 />
               )}

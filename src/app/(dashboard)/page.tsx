@@ -1,6 +1,5 @@
 "use client";
 
-import { mobileNav } from "@/config/navigation";
 import {
   CaretDownIcon,
   CaretRightIcon,
@@ -19,7 +18,6 @@ import { InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import PfCombobox from "@/components/pf-components/pf-combobox/pf-combobox";
 import PfDropdown from "@/components/pf-components/pf-dropdown/pf-dropdown";
 import PfInput from "@/components/pf-components/pf-input/pf-input";
-import PfBottomNav from "@/components/pf-components/pf-navigation-menu/pf-navigation-menu";
 import PfPagination from "@/components/pf-components/pf-pagination/pf-pagination";
 
 const items = [
@@ -40,10 +38,6 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <div>
-          <PfBottomNav navItems={mobileNav} />
-        </div>
-
         <div className="w-full">
           <PfPagination
             page={page}
