@@ -18,7 +18,7 @@ interface PfTransactionsCardProps<TData, TValue> {
   data: TData[];
 }
 
-const PfTransactionsCard = <TData, TValue>({
+const PfTransactionsOverviewCard = <TData, TValue>({
   columns,
   data,
 }: PfTransactionsCardProps<TData, TValue>) => {
@@ -62,4 +62,4 @@ const PfTransactionsCard = <TData, TValue>({
   );
 };
 
-export default PfTransactionsCard;
+export default PfTransactionsOverviewCard;

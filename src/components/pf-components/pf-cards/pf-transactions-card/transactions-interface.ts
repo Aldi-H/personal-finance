@@ -31,7 +31,7 @@ import React from "react";
 
 export type TransactionType = "income" | "expense";
 
-export interface PfTransactionsColumnsInterface {
+export interface PfTransactionsOverviewColumnsInterface {
   id: string;
   transactionName: string;
   transactionDate: string;

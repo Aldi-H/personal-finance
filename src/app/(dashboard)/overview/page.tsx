@@ -2,12 +2,12 @@ import PfBudgetsCard from "@/components/pf-components/pf-cards/pf-budgets-card/p
 import PfPotsCard from "@/components/pf-components/pf-cards/pf-pots-card/pf-pots-card";
 import PfRecurringBillsCard from "@/components/pf-components/pf-cards/pf-recurring-bills-card/pf-recurring-bills-card";
 import PfSectionCard from "@/components/pf-components/pf-cards/pf-section-card/pf-section-card";
-import PfTransactionsCard from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-card";
-import { PfTransactionsColumns } from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-columns";
-import { PfTransactionsColumnsInterface } from "@/components/pf-components/pf-cards/pf-transactions-card/transactions-interface";
+import PfTransactionsOverviewCard from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-overview-card";
+import { PfTransactionsOverviewColumns } from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-overview-columns";
+import { PfTransactionsOverviewColumnsInterface } from "@/components/pf-components/pf-cards/pf-transactions-card/transactions-interface";
 import PfPageHeader from "@/components/pf-components/pf-header/pf-page-header";
 
-const data: PfTransactionsColumnsInterface[] = [
+const data: PfTransactionsOverviewColumnsInterface[] = [
   {
     id: "1",
     transactionName: "Emma Richardson",
@@ -82,8 +82,8 @@ const PageOverview = () => {
                 <div className="flex flex-col gap-6">
                   <PfPotsCard />
                   <div className="flex-1">
-                    <PfTransactionsCard
-                      columns={PfTransactionsColumns}
+                    <PfTransactionsOverviewCard
+                      columns={PfTransactionsOverviewColumns}
                       data={data}
                     />
                   </div>

@@ -6,7 +6,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 import {
-  PfTransactionsColumnsInterface,
+  PfTransactionsOverviewColumnsInterface,
   iconMap,
 } from "./transactions-interface";
 
@@ -24,7 +24,7 @@ const getIconComponent = (iconName?: string, initials?: string) => {
   );
 };
 
-export const PfTransactionsColumns: ColumnDef<PfTransactionsColumnsInterface>[] =
+export const PfTransactionsOverviewColumns: ColumnDef<PfTransactionsOverviewColumnsInterface>[] =
   [
     {
       accessorKey: "transactionName",
