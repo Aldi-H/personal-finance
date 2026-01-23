@@ -4,7 +4,7 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface PfCardProps {
-  pfCardTitle?: string;
+  pfCardTitle?: React.ReactNode;
   pfCardAction?: React.ReactNode;
   children?: React.ReactNode;
 }

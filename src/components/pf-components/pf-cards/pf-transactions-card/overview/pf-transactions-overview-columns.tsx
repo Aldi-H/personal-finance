@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   PfTransactionsOverviewColumnsInterface,
   iconMap,
-} from "./transactions-interface";
+} from "../transactions-interface";
 
 const getIconComponent = (iconName?: string, initials?: string) => {
   const iconClass = "h-5 w-5 md:h-6 md:w-6";

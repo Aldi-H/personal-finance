@@ -10,8 +10,8 @@ import {
 
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
-import PfCard from "../pf-card";
-import PfCardAction from "../pf-card-action.";
+import PfCard from "../../pf-card";
+import PfCardAction from "../../pf-card-action.";
 
 interface PfTransactionsCardProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

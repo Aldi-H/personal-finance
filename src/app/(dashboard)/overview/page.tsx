@@ -2,8 +2,8 @@ import PfBudgetsCard from "@/components/pf-components/pf-cards/pf-budgets-card/p
 import PfPotsCard from "@/components/pf-components/pf-cards/pf-pots-card/pf-pots-card";
 import PfRecurringBillsCard from "@/components/pf-components/pf-cards/pf-recurring-bills-card/pf-recurring-bills-card";
 import PfSectionCard from "@/components/pf-components/pf-cards/pf-section-card/pf-section-card";
-import PfTransactionsOverviewCard from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-overview-card";
-import { PfTransactionsOverviewColumns } from "@/components/pf-components/pf-cards/pf-transactions-card/pf-transactions-overview-columns";
+import PfTransactionsOverviewCard from "@/components/pf-components/pf-cards/pf-transactions-card/overview/pf-transactions-overview-card";
+import { PfTransactionsOverviewColumns } from "@/components/pf-components/pf-cards/pf-transactions-card/overview/pf-transactions-overview-columns";
 import { PfTransactionsOverviewColumnsInterface } from "@/components/pf-components/pf-cards/pf-transactions-card/transactions-interface";
 import PfPageHeader from "@/components/pf-components/pf-header/pf-page-header";
 
