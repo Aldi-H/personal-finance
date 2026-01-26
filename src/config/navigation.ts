@@ -23,7 +23,6 @@ export const mobileNav = [
     label: "Budgets",
     href: "/budgets",
     icon: ChartDonutIcon,
-    isActive: true,
   },
   {
     label: "Pots",
@@ -40,28 +39,27 @@ export const mobileNav = [
 export const sidebarNav = [
   {
     title: "Overview",
-    url: "#",
+    url: "/overview",
     icon: HouseIcon,
-    isActive: true,
   },
   {
     title: "Transactions",
-    url: "#",
+    url: "/transactions",
     icon: ArrowsDownUpIcon,
   },
   {
     title: "Budgets",
-    url: "#",
+    url: "/budgets",
     icon: ChartDonutIcon,
   },
   {
     title: "Pots",
-    url: "#",
+    url: "/pots",
     icon: TipJarIcon,
   },
   {
     title: "Recurring bills",
-    url: "#",
+    url: "/recurring-bills",
     icon: ReceiptIcon,
   },
 ];
